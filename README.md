@@ -9,7 +9,7 @@
 #Activate virtualenv
 
 ```
-source my_project/bin/activate
+source env_tenzor/bin/activate
 
 ```
 
