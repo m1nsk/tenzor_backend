@@ -6,7 +6,7 @@
 
 ```
 
-#Instal virtualenv
+#Activate virtualenv
 
 ```
 source my_project/bin/activate
