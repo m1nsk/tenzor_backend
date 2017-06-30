@@ -37,11 +37,11 @@ class GoodsViewSet(viewsets.ModelViewSet):
         if category_id == -1:
             print('no category')
             query_start = Goods.objects.filter(name__istartswith=complete_field)
-            query_regexp = Goods.objects.filter(name__regex=r'^(.)+' + complete_field)
+            query_regexp = Goods.objects.filter(name__iregex=r'^(.)+' + complete_field)
         else:
             print('yes category')
             query_start = Goods.objects.filter(category_id=category_id, name__istartswith=complete_field)
-            query_regexp = Goods.objects.filter(category_id=category_id, name__regex=r'^(.)+' + complete_field)
+            query_regexp = Goods.objects.filter(category_id=category_id, name__iregex=r'^(.)+' + complete_field)
         chain_query = list(chain(query_start, query_regexp))
         for item in chain_query:
             if not goods_dict[item]:
